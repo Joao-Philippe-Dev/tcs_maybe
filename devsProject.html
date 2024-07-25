@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="devsProject.html" class="css">
+    <title>desenvolvedores</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+}
+
+.container .item {
+    height: 250px;
+    width: 350px;
+    border: 3px solid purple;
+    box-shadow: 0 10px 15px #90639E;
+    cursor: pointer;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.item img:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    color: blueviolet;
+    letter-spacing: 2px;
+    line-height: 4em;
+}
+
+.text-dev h1{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #515151;
+    text-shadow: #808080 0.2em 0.2em 0.5em;
+    line-height: 2em;
+}
+
+.text-developer {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    line-height: 3em;
+}
+/* adicionado */
+
+:root {
+    --purple: #9400d3;
+    --blue: #00285f;
+    --gray: #ededed;
+}
+
+header {
+    width: 100%;
+    height: 500px;
+    background: var(--blue);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.content {
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.brand {
+    
+    font-size: 35px;
+    color: white;
+    cursor: pointer; 
+    font-family: 'Lato', sans-serif;
+}
+
+.brand strong {
+    font-size: 35px;
+    color: var(--purple);
+    cursor: pointer; 
+    font-family: 'Lato', sans-serif;
+}
+
+nav ul {
+    display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      margin-left: 440px;
+}
+
+nav ul li {
+    list-style: none;
+      padding: 10px;
+      cursor: pointer;
+}
+
+nav ul li a {
+    color: white;
+      text-decoration: none;
+      font-family: 'Play', sans-serif;
+      margin-left: 245px;
+}
+
+nav ul li a:hover {
+    color: #9400d3;
+}
+
+nav ul button {
+    border: 2px solid var(--purple);
+      background: var(--purple);
+      padding: 8px 25px;
+      margin-left: 30px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+}
+
+
+nav ul button:hover {
+    transition: background, color 0.6s;
+      background: transparent;
+      color: var(--purple);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <nav>
+                <a href="index.html" style="text-decoration: none; color: wihte;"><a href="index.html" class="brand" style="text-decoration: none; color: white;">Tech<a href="index.html" style="font-size: 35px; color: var(--purple); cursor: pointer; font-family: 'Lato', sans-serif; text-decoration: none;">Box</a></a>
+                <ul>
+                    <a href="login.php"><button>LOGIN</button></a>
+                    <a href="cadastroUsuario.php"><button>CADASTRAR</button></a>
+                    <a href="suporte.php"><button>SUPORTE</button></a>
+                </ul>
+                </p>
+            </nav>
+            </div>
+    <div class="text">
+    <h2>Desenvolvedores</h2>
+</div>
+    <div class="text-developer">
+<h1>João Vitor Philippe</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.linkedin.com/in/joão-vitor-philippe-6b4421224/"><img src="imagens/joao.jpeg"></a>
+        </div>
+    </div>
+</div>
+<div class="text-dev">
+<h1>Vinicius Devegili</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.linkedin.com/in/vinicius-devegili-054243180/"><img src="imagens/eu.jpeg"></a>
+        </div>
+    </div>
+</div>
+<div class="text-dev">
+<h1>Kauã Neneve</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.linkedin.com/in/vinicius-devegili-054243180/"><img src=""></a>
+        </div>
+    </div>
+</div>
+<div class="text-dev">
+<h1>Gustavo João</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.linkedin.com/in/vinicius-devegili-054243180/"><img src="imagens/guda.jpg"></a>
+        </div>
+    </div>
+</div>
+<div class="text-dev">
+<h1>Mauro Junior</h1>
+    <div class="container">
+        <div class="item">
+            <a href="https://www.linkedin.com/in/vinicius-devegili-054243180/"><img src="imagens/mauro.jpeg"></a>
+        </div>
+    </div>
+    <div class="text-dev">
+        <h1>Vinicius Alberto</h1>
+            <div class="container">
+                <div class="item">
+                    <a href="https://www.linkedin.com/in/vinicius-devegili-054243180/"><img src="imagens/alberto.jpeg"></a>
+                </div>
+            </div>
+</div>
+</header>
+</body>
+</html>

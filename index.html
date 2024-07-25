@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="index.php">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      outline: none;
+      font-family: sans-serif;
+    }
+
+    :root {
+      --purple: #9400d3;
+      --blue: #00285f;
+      --gray: #ededed;
+    }
+
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      height: 500px;
+      background: var(--blue);
+    }
+
+    .content {
+      max-width: 1000px;
+      min-width: 300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      font-size: 15px;
+      font-family: 'Lato', sans-serif;
+    }
+
+    nav {
+      width: 100%;
+      height: 125px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 35px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .brand strong {
+      font-size: 35px;
+      color: var(--purple);
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      margin-left: 90px;
+    }
+
+    nav ul li {
+      list-style: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Play', sans-serif;
+    }
+
+    nav ul li a:hover {
+      color: #9400d3;
+    }
+
+    nav ul button {
+      border: 2px solid var(--purple);
+      background: var(--purple);
+      padding: 8px 25px;
+      cursor: pointer;
+      margin-left: 30px;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+    }
+
+
+    nav ul button:hover {
+      transition: background, color 0.6s;
+      background: transparent;
+      color: var(--purple);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .content .header-block {
+      max-width: 1000px;
+      min-width: 300px;
+      height: 450px;
+      background: var(--purple);
+      border-radius: 8px;
+      box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 10;
+      padding: 10px;
+    }
+
+    .header-block img {
+      width: 100%;
+      position: absolute;
+      left: 0%;
+      bottom: 0%;
+    }
+
+
+    
+
+    /* product catalogos */
+
+    section .catalog {
+      width: 100vw;
+      padding: 100px;
+    }
+
+    section .filter-card {
+      width: 980px;
+      height: 150px;
+      background-color: var(--gray);
+      border-radius: 8px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-input {
+      width: 700px;
+      height: 50px;
+      border: none;
+      border-radius: 4px 0px 0px 4px;
+      text-indent: 10px;
+    }
+
+    .search-button {
+      width: 150px;
+      height: 50px;
+      border-radius: 0px 4px 4px 0px;
+      border: none;
+      background-color: var(--purple);
+      color: white;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: 0.2s ease;
+    }
+
+    .search-button:hover {
+      background-color: #dedede;
+      color: var(--purple);
+    }
+
+    .title-wrapper-catalog {
+      margin-top: 200px;
+      padding-bottom: 20px;
+    }
+
+    section .card-wrapper {
+      max-width: 1000px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-gap: 30px;
+      padding-top: 50px;
+    }
+
+
+    section .card-item {
+      height: 400px;
+      background-color: var(--gray);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .card-content {
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .card-item img {
+      width: 85%;
+    }
+
+    .card-item h4 {
+      width: 90%;
+    }
+
+    .card-item p {
+      width: 90%;
+      font-style: italic;
+      color: #00000070
+    }
+
+    .card-item button {
+      width: 90%;
+      padding: 15px 0px;
+      border: none;
+      background: var(--purple);
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    .card-item button:hover {
+      background: #dedede3b;
+      color: var(--purple);
+    }
+
+
+    /* Sobre */
+
+    .about {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 10px;
+    }
+
+    .about-content {
+      max-width: 1000%;
+      min-width: 300px;
+      height: 600px;
+      background: #dedede3b;
+      margin: 0 auto;
+      border-radius: 8px;
+      z-index: 10;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .left {
+      width: 25%;
+      min-width: 300px;
+      height: 100%;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .right {
+      width: 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 10%;
+    }
+
+    .right h3 {
+      text-align: right;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .right p {
+      max-width: 90%;
+      font-size: 1em;
+      letter-spacing: 2px;
+      text-align: right;
+      color: rgba(0, 0, 0, 0.5)
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <a href="index.html" style="text-decoration: none; color: wihte;"><a href="index.html" class="brand" style="text-decoration: none; color: white;">Tech</a><a href="index.html" style="font-size: 35px;
+          color: var(--purple);
+          cursor: pointer;
+          font-family: 'Lato', sans-serif;
+          text-decoration: none;">Box</a>
+        </a>
+        <ul>
+          <li><a href="#catalog">PRODUTOS</a></li>
+          <li><a href="#about">SOBRE</a></li>
+          <li><a href="devsProject.html">DESENVOLVEDORES</a></li>
+          <a href="login.php"><button>LOGIN</button></a>
+          <a href="cadastroUsuario.php"><button>CADASTRAR</button></a>
+          <a href="suporte.php"><button>SUPORTE</button></a>
+        </ul>
+        </p>
+      </nav>
+      <div class="header-block">
+        <img src="imagens/GAMERR.png" alt="Logo">
+      </div>
+    </div>
+  </header>
+  <section class="catalog" id="catalog">
+    <div class="content">
+      <div class="title-wrapper-catalog">
+        <p>Encontre o que você procura</p>
+        <h3>Produtos</h3>
+      </div>
+      <div class="filter-card">
+        <input type="text" class="search-input" placeholder="Escolha seu produto favorito" />
+        <button class="search-button">Buscar</button>
+      </div>
+      <div class="card-wrapper">
+        <div class="card-item">
+          <a href="visuProd.html"><img src="imagens/vipermini.png" alt="ram"></a>
+          <div class="card-content">
+            <h3>Mouse Razer Viper Mini</h3>
+            <p>Criado para ultrapassar todos os limites dos mouses extremamente leves.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/glorious.png" alt="ram">
+          <div class="card-content">
+            <h3>Mouse Glorious Model O</h3>
+            <p>Mouse para jogos ambidestro ultraleve, ideal para mãos de tamanho médio.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/cobra.png" alt="ram">
+          <div class="card-content">
+            <h3>Mouse Redragon Cobra</h3>
+            <p>Equipado com o sensor Pixart PWM 3325 de 10000 DPI.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/fizz.png" alt="ram">
+          <div class="card-content">
+            <h3>Teclado Redragon Fizz</h3>
+            <p>Compacto 61 teclas com teclas selecionadas, dedicado para FPS.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/hutsman.png" alt="ram">
+          <div class="card-content">
+            <h3>Teclado Razer Hutsman</h3>
+            <p> Altamente portátil e ideal para setups dinamizados.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/alloy.png" alt="ram">
+          <div class="card-content">
+            <h3>Teclado HyperX Alloy Origins</h3>
+            <p>O HyperX Alloy Origins 60 é um teclado de formato 60% extremamente portátil.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/cloud.png" alt="ram">
+          <div class="card-content">
+            <h3>Headset HyperX Cloud II</h3>
+            <p>O Headset HyperXCloud II você tem a garantia de uma excelente experiência.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/edifier.png" alt="ram">
+          <div class="card-content">
+            <h3>Headset Edifier W600bt</h3>
+            <p>O W600BT teve o tempo de bateria atualizado para 30 horas.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/nari.png" alt="ram">
+          <div class="card-content">
+            <h3>Headset Razer Nari</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/tiger.png" alt="ram">
+          <div class="card-content">
+            <h3>Mousepad Tiger Eba</h3>
+            <p>Mousepad Tiger é focado em E-sports, como o fps.
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/goliathus.png" alt="ram">
+          <div class="card-content">
+            <h3>Mousepad Razer Goliathus</h3>
+            <p>Este mousepad gamer tem o tamanho adequado para jogadores intensos
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="imagens/fury.png" alt="ram">
+          <div class="card-content">
+            <h3>Mousepad HyperX Fury S</h3>
+            <p>O HyperX FURY S apresenta uma superfície em tecido macio
+            </p>
+            <button type="button">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title-wrapper-about">
+        <p>Saiba sobre nós</p>
+        <h3>Sobre</h3>
+      </div>
+      <div class="about-content">
+        <div class="left">
+          <img src="imagens/about.png" alt="About">
+        </div>
+        <div class="right">
+          <h3>Fique por dentro da tecnologia</h3>
+          <p>
+            Nossa loja foi fundada no ano de 2020, Tendo em vista a expansão para o mercado nacional, desenvolvemos a www.techbox.com.br no ano de 2021.
+            Somos uma empresa que atua no mercado de tecnologia, buscando sempre a excelência no que faz. Com os melhores produtos das linhas de:
+            Smartphones, Games, Informática, Periféricos, Eletrônicos e Hardware com excelência e com as melhores marcas do mercado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
